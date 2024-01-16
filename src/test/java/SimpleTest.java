@@ -54,47 +54,47 @@ public class SimpleTest {
 
 
     public void testMakingAnOrderByPickUpByWriteScore() throws Exception {
-      this.driver.get(ITEST_HOME_PAGE);
-      System.out.println("начало второго теста" );
-      Set<Cookie> cookiesListNew =  driver.manage().getCookies();
-      for(Cookie getcookies :cookiesListNew) {
-        System.out.println(getcookies );
-      }
-
-
-      if(this.driver.findElements(By.xpath("//button[@data-testid='understand-button']")).size() >0){
-        waitForElementPresent(By.xpath("//button[@data-testid='understand-button']"),"все понятно не появилось", 10);
-        this.driver.findElement(By.xpath("//button[@data-testid='understand-button']")).click();
-        //System.out.println("все понятно" );
-      }
-      else if(this.driver.findElements(By.xpath("//button[@data-testid='okay-button']")).size() >0) {
-
-        //System.out.println("все верно" );
-        this.driver.findElement(By.xpath("//button[@data-testid='okay-button']")).click();
-        this.takeSceenshot();
-      }
-
-        waitForElementPresent(By.xpath("//button[@data-testid='authorization-button']"), "кнопка войти не появилась", 10);
-        this.driver.findElement(By.xpath("//button[@data-testid='authorization-button']")).click();
-        this.takeSceenshot();
-        driver.findElement(By.name("login")).clear();
-        driver.findElement(By.name("login")).sendKeys(LOGIN_MARKET);
-        driver.findElement(By.name("password")).clear();
-        driver.findElement(By.name("password")).sendKeys(PASSWORD_MARKET);
-        driver.findElement(By.xpath("//button[@data-testid='go-to-system']")).click();
-
-
-
-      try {
-        WebElement button = driver.findElement(By.xpath("//a[@data-testid='top-menu-estimates']"));
-        button.click();
-      } catch (StaleElementReferenceException ex) {
-        WebElement button = driver.findElement(By.xpath("//a[@data-testid='top-menu-estimates']"));
-        button.click();
-      }
-      driver.findElement(By.xpath("//button[@id='composition-button']")).click();
-      driver.findElement(By.xpath("//li[@data-testid='drop-menu-item-exit']")).click();
-      System.out.println("конец второго теста" );
+//      this.driver.get(ITEST_HOME_PAGE);
+//      System.out.println("начало второго теста" );
+//      Set<Cookie> cookiesListNew =  driver.manage().getCookies();
+//      for(Cookie getcookies :cookiesListNew) {
+//        System.out.println(getcookies );
+//      }
+//
+//
+//      if(this.driver.findElements(By.xpath("//button[@data-testid='understand-button']")).size() >0){
+//        waitForElementPresent(By.xpath("//button[@data-testid='understand-button']"),"все понятно не появилось", 10);
+//        this.driver.findElement(By.xpath("//button[@data-testid='understand-button']")).click();
+//        //System.out.println("все понятно" );
+//      }
+//      else if(this.driver.findElements(By.xpath("//button[@data-testid='okay-button']")).size() >0) {
+//
+//        //System.out.println("все верно" );
+//        this.driver.findElement(By.xpath("//button[@data-testid='okay-button']")).click();
+//        this.takeSceenshot();
+//      }
+//
+//        waitForElementPresent(By.xpath("//button[@data-testid='authorization-button']"), "кнопка войти не появилась", 10);
+//        this.driver.findElement(By.xpath("//button[@data-testid='authorization-button']")).click();
+//        this.takeSceenshot();
+//        driver.findElement(By.name("login")).clear();
+//        driver.findElement(By.name("login")).sendKeys(LOGIN_MARKET);
+//        driver.findElement(By.name("password")).clear();
+//        driver.findElement(By.name("password")).sendKeys(PASSWORD_MARKET);
+//        driver.findElement(By.xpath("//button[@data-testid='go-to-system']")).click();
+//
+//
+//
+//      try {
+//        WebElement button = driver.findElement(By.xpath("//a[@data-testid='top-menu-estimates']"));
+//        button.click();
+//      } catch (StaleElementReferenceException ex) {
+//        WebElement button = driver.findElement(By.xpath("//a[@data-testid='top-menu-estimates']"));
+//        button.click();
+//      }
+//      driver.findElement(By.xpath("//button[@id='composition-button']")).click();
+//      driver.findElement(By.xpath("//li[@data-testid='drop-menu-item-exit']")).click();
+//      System.out.println("конец второго теста" );
 
       /*MainPageObject.waitForElementAndSendKeys("//input[@name='nameEst']", "999/0817524", "not found the data entry element ", 5);
       MainPageObject.waitForElementAndClick("//button[@data-testid='search-button']", "not found and click element of search", 5);

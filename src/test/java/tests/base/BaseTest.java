@@ -9,6 +9,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import pages.autorization.Autorization;
 import pages.base.BasePage;
+import pages.estimate.EstimateMarket;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -31,6 +32,7 @@ public class BaseTest  {
 
   protected BasePage basepage = new BasePage(driver);
   protected Autorization autorization = new Autorization(driver);
+  protected EstimateMarket estimateMarket = new EstimateMarket(driver);
 
 
 

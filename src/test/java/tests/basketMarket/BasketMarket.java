@@ -8,5 +8,12 @@ public class BasketMarket extends BaseTest {
   public void testMakingAnOrderByPickUpByWriteScore() throws Exception {
    autorization.enterLoginPassword();
   }
+  @Test
+  public void testMakingAnOrderByCDEKPayUponReceipt() throws Exception{
+    autorization
+            .enterLoginPassword();
+    estimateMarket
+            .AddEstimateToBasket();
+  }
 
 }
