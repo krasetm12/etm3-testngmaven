@@ -26,9 +26,8 @@ public class EstimateMarket extends BasePage {
       WebElement button = driver.findElement(top_menu_estimates);
       button.click();
     }
-    driver.findElement(composition_button).click();
-    driver.findElement(drop_menu_item_exit).click();
-    System.out.println("конец второго теста" );
+
+    System.out.println("перешли в раздел Сметы" );
     return this;
   }
 

@@ -52,13 +52,16 @@ public class Autorization extends BasePage {
       driver.findElement(password).clear();
       driver.findElement(password).sendKeys(PASSWORD_MARKET);
       driver.findElement(go_to_system).click();
-      driver.findElement(composition_button).click();
-      //String sessionId = driver.getSessionId().toString();
-      Set<Cookie> cookiesListNewm = driver.manage().getCookies();
+      return this;
+    }
+  public Autorization deAuthorization() throws Exception {
+    driver.findElement(composition_button).click();
+  //String sessionId = driver.getSessionId().toString();
+  Set<Cookie> cookiesListNewm = driver.manage().getCookies();
       for (Cookie getcookies : cookiesListNewm) {
-        System.out.println(getcookies);
-      }
-      Cookie cookieSession = driver.manage().getCookieNamed("session-id");
+    System.out.println(getcookies);
+  }
+  Cookie cookieSession = driver.manage().getCookieNamed("session-id");
       System.out.println(cookieSession.getValue());
       driver.findElement(drop_menu_item_exit).click();
 

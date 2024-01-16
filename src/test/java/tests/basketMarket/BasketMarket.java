@@ -6,7 +6,10 @@ import tests.base.BaseTest;
 public class BasketMarket extends BaseTest {
   @Test
   public void testMakingAnOrderByPickUpByWriteScore() throws Exception {
-   autorization.enterLoginPassword();
+   autorization
+           .enterLoginPassword()
+           .deAuthorization();
+
   }
   @Test
   public void testMakingAnOrderByCDEKPayUponReceipt() throws Exception{
@@ -14,6 +17,8 @@ public class BasketMarket extends BaseTest {
             .enterLoginPassword();
     estimateMarket
             .AddEstimateToBasket();
+    autorization
+            .deAuthorization();
   }
 
 }
