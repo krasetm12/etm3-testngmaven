@@ -16,7 +16,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class SimpleTest {
-    public RemoteWebDriver driver;
+    //public RemoteWebDriver driver;
 
       //http://localhost:4444/wd/hub"
 
@@ -30,20 +30,20 @@ public class SimpleTest {
     String PASSWORD_IPRO="qakras123";
 
 
-    @BeforeTest
-    public void start() throws Exception {
-        this.driver = new RemoteWebDriver(
-                new URL(SELENIUM_URL),
-                new ChromeOptions()
-        );
-        this.driver.manage().window().maximize();
-        this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
-    @AfterTest
-    public void closeSeleniumSession() {
-        this.driver.close();
-        this.driver.quit();
-    }
+//    @BeforeTest
+//    public void start() throws Exception {
+//        this.driver = new RemoteWebDriver(
+//                new URL(SELENIUM_URL),
+//                new ChromeOptions()
+//        );
+//        this.driver.manage().window().maximize();
+//        this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//    }
+//    @AfterTest
+//    public void closeSeleniumSession() {
+//        this.driver.close();
+//        this.driver.quit();
+//    }
     
     /*@Test
     public void simpleTest() throws Exception {
@@ -62,12 +62,12 @@ public class SimpleTest {
       }
 
 
-      if(this.driver.findElementsByXPath("//button[@data-testid='understand-button']").size() >0){
+      if(this.driver.findElements(By.xpath("//button[@data-testid='understand-button']")).size() >0){
         waitForElementPresent(By.xpath("//button[@data-testid='understand-button']"),"все понятно не появилось", 10);
         this.driver.findElement(By.xpath("//button[@data-testid='understand-button']")).click();
         //System.out.println("все понятно" );
       }
-      else if(this.driver.findElementsByXPath("//button[@data-testid='okay-button']").size() >0) {
+      else if(this.driver.findElements(By.xpath("//button[@data-testid='okay-button']")).size() >0) {
 
         //System.out.println("все верно" );
         this.driver.findElement(By.xpath("//button[@data-testid='okay-button']")).click();
@@ -88,7 +88,7 @@ public class SimpleTest {
       try {
         WebElement button = driver.findElement(By.xpath("//a[@data-testid='top-menu-estimates']"));
         button.click();
-      } catch (org.openqa.selenium.StaleElementReferenceException ex) {
+      } catch (StaleElementReferenceException ex) {
         WebElement button = driver.findElement(By.xpath("//a[@data-testid='top-menu-estimates']"));
         button.click();
       }
@@ -112,41 +112,41 @@ public class SimpleTest {
 
 
     public void testMakingAnOrderByCDEKPayUponReceipt() throws Exception{
-        this.driver.get(ITEST_HOME_PAGE);
-      System.out.println("начало первого теста" );
-      if(this.driver.findElementsByXPath("//button[@data-testid='understand-button']").size() >0){
-          waitForElementPresent(By.xpath("//button[@data-testid='understand-button']"),"все понятно не появилось", 10);
-          //System.out.println("все понятно" );
-          this.driver.findElement(By.xpath("//button[@data-testid='understand-button']")).click();
-          this.takeSceenshot();
-        }
-        else if(this.driver.findElementsByXPath("//button[@data-testid='okay-button']").size() >0) {
-
-          //System.out.println("все верно" );
-          this.takeSceenshot();
-          this.driver.findElement(By.xpath("//button[@data-testid='okay-button']")).click();
-
-        }
-
-        waitForElementPresent(By.xpath("//button[@data-testid='authorization-button']"), "кнопка войти не появилась", 10);
-        this.driver.findElement(By.xpath("//button[@data-testid='authorization-button']")).click();
-        this.takeSceenshot();
-        driver.findElement(By.name("login")).clear();
-        driver.findElement(By.name("login")).sendKeys(LOGIN_MARKET);
-        driver.findElement(By.name("password")).clear();
-        driver.findElement(By.name("password")).sendKeys(PASSWORD_MARKET);
-        driver.findElement(By.xpath("//button[@data-testid='go-to-system']")).click();
-        driver.findElement(By.xpath("//button[@id='composition-button']")).click();
-      //String sessionId = driver.getSessionId().toString();
-      Set<Cookie> cookiesListNewm =  driver.manage().getCookies();
-      for(Cookie getcookies :cookiesListNewm) {
-        System.out.println(getcookies );
-      }
-      Cookie cookieSession=this.driver.manage().getCookieNamed("session-id");
-      System.out.println(cookieSession.getValue());
-      driver.findElement(By.xpath("//li[@data-testid='drop-menu-item-exit']")).click();
-
-      System.out.println("конец первого теста" );
+//        this.driver.get(ITEST_HOME_PAGE);
+//      System.out.println("начало первого теста" );
+//      if(this.driver.findElements(By.xpath("//button[@data-testid='understand-button']")).size() >0){
+//          waitForElementPresent(By.xpath("//button[@data-testid='understand-button']"),"все понятно не появилось", 10);
+//          //System.out.println("все понятно" );
+//          this.driver.findElement(By.xpath("//button[@data-testid='understand-button']")).click();
+//          this.takeSceenshot();
+//        }
+//        else if(this.driver.findElements(By.xpath("//button[@data-testid='okay-button']")).size() >0) {
+//
+//          //System.out.println("все верно" );
+//          this.takeSceenshot();
+//          this.driver.findElement(By.xpath("//button[@data-testid='okay-button']")).click();
+//
+//        }
+//
+//          waitForElementPresent(By.xpath("//button[@data-testid='authorization-button']"), "кнопка войти не появилась", 10);
+//        this.driver.findElement(By.xpath("//button[@data-testid='authorization-button']")).click();
+//        this.takeSceenshot();
+//        driver.findElement(By.name("login")).clear();
+//        driver.findElement(By.name("login")).sendKeys(LOGIN_MARKET);
+//        driver.findElement(By.name("password")).clear();
+//        driver.findElement(By.name("password")).sendKeys(PASSWORD_MARKET);
+//        driver.findElement(By.xpath("//button[@data-testid='go-to-system']")).click();
+//        driver.findElement(By.xpath("//button[@id='composition-button']")).click();
+//      //String sessionId = driver.getSessionId().toString();
+//      Set<Cookie> cookiesListNewm =  driver.manage().getCookies();
+//      for(Cookie getcookies :cookiesListNewm) {
+//        System.out.println(getcookies );
+//      }
+//      Cookie cookieSession=this.driver.manage().getCookieNamed("session-id");
+//      System.out.println(cookieSession.getValue());
+//      driver.findElement(By.xpath("//li[@data-testid='drop-menu-item-exit']")).click();
+//
+//      System.out.println("конец первого теста" );
 
 
         /*try {
@@ -199,75 +199,75 @@ public class SimpleTest {
     }
 
 
-    private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
-        WebDriverWait wait = new WebDriverWait(this.driver, timeoutInSeconds);
-        wait.withMessage(error_message + "\n");
-
-        return wait.until(
-                ExpectedConditions.presenceOfElementLocated(by)
-        );
-    }
-    private WebElement waitForElementAndClick(By by, String error_message, long timeoutInSeconds) {
-      WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
-      element.click();
-
-      return element;
-
-    }
-   private WebElement waitForElementAndClickable(By by, String error_message, long timeoutInSeconds){
-      WebDriverWait wait=new WebDriverWait(driver, 10);
-      wait.withMessage(error_message + "\n");
-      return wait.until
-              (ExpectedConditions.elementToBeClickable(by));
-
-    }
-
-
-    private WebElement waitForElementAndSendKeys(By by, String value, String error_message, long timeoutInSeconds) {
-      WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
-      element.sendKeys(value);
-
-      return element;
-
-    }
-
-    private boolean waitForElementNotPresent(By by, String error_message, long timeoutInSeconds) {
-      WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
-      wait.withMessage(error_message + "\n");
-
-      return wait.until(
-              ExpectedConditions.invisibilityOfElementLocated(by)
-      );
-    }
-
-    private WebElement waitForElementAndClear(By by, String error_message, long timeoutInSeconds) {
-      WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
-      element.clear();
-      return element;
-    }
-    private WebElement waitForElementLocated(By by, String error_message, long timeoutInSeconds) {
-      WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
-      wait.withMessage(error_message + "\n");
-
-      return wait.until(
-              ExpectedConditions.visibilityOfElementLocated(by)
-      );
-    }
-    public void clickVisible(By by ,String error_message, long timeoutInSeconds ){
-        WebDriverWait wait = new WebDriverWait(this.driver, timeoutInSeconds);
-        wait.until(ExpectedConditions.elementToBeClickable(by));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        final Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(by)).click().perform();
-    }
-
-    private void takeSceenshot() throws Exception {
-        TakesScreenshot ts = (TakesScreenshot)this.driver;
-        File source = ts.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(source, new File("./screenshot.png"));
-        System.out.println("The Screenshot is taken...");
-
-    }
+//    private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
+//        WebDriverWait wait = new WebDriverWait(this.driver, timeoutInSeconds);
+//        wait.withMessage(error_message + "\n");
+//
+//        return wait.until(
+//                ExpectedConditions.presenceOfElementLocated(by)
+//        );
+//    }
+//    private WebElement waitForElementAndClick(By by, String error_message, long timeoutInSeconds) {
+//      WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
+//      element.click();
+//
+//      return element;
+//
+//    }
+//   private WebElement waitForElementAndClickable(By by, String error_message, long timeoutInSeconds){
+//      WebDriverWait wait=new WebDriverWait(driver, 10);
+//      wait.withMessage(error_message + "\n");
+//      return wait.until
+//              (ExpectedConditions.elementToBeClickable(by));
+//
+//    }
+//
+//
+//    private WebElement waitForElementAndSendKeys(By by, String value, String error_message, long timeoutInSeconds) {
+//      WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
+//      element.sendKeys(value);
+//
+//      return element;
+//
+//    }
+//
+//    private boolean waitForElementNotPresent(By by, String error_message, long timeoutInSeconds) {
+//      WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+//      wait.withMessage(error_message + "\n");
+//
+//      return wait.until(
+//              ExpectedConditions.invisibilityOfElementLocated(by)
+//      );
+//    }
+//
+//    private WebElement waitForElementAndClear(By by, String error_message, long timeoutInSeconds) {
+//      WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
+//      element.clear();
+//      return element;
+//    }
+//    private WebElement waitForElementLocated(By by, String error_message, long timeoutInSeconds) {
+//      WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+//      wait.withMessage(error_message + "\n");
+//
+//      return wait.until(
+//              ExpectedConditions.visibilityOfElementLocated(by)
+//      );
+//    }
+//    public void clickVisible(By by ,String error_message, long timeoutInSeconds ){
+//        WebDriverWait wait = new WebDriverWait(this.driver, timeoutInSeconds);
+//        wait.until(ExpectedConditions.elementToBeClickable(by));
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+//        final Actions actions = new Actions(driver);
+//        actions.moveToElement(driver.findElement(by)).click().perform();
+//    }
+//
+//    private void takeSceenshot() throws Exception {
+//        TakesScreenshot ts = (TakesScreenshot)this.driver;
+//        File source = ts.getScreenshotAs(OutputType.FILE);
+//        FileUtils.copyFile(source, new File("./screenshot.png"));
+//        System.out.println("The Screenshot is taken...");
+//
+//    }
 
 
 }
