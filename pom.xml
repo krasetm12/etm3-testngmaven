@@ -17,13 +17,13 @@
         <testng-version>7.0.0</testng-version>
         <log4j-version>2.14.1</log4j-version>
         <extentreports-version>5.0.8</extentreports-version>
-        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>2.12.2</maven-surefire-plugin.version>
         <ashot-version>1.5.4</ashot-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <suiteXml>testng.xml</suiteXml>
     </properties>
-    <!--<build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -59,7 +59,7 @@
                 <version>2.10.0</version>
             </plugin>
         </plugins>
-    </build>-->
+    </build>
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
