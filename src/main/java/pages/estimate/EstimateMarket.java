@@ -15,7 +15,7 @@ public class EstimateMarket extends BasePage {
   private final By top_menu_estimates=By.xpath("//a[@data-testid='top-menu-estimates']");
   By go_to_system=By.xpath("//button[@data-testid='go-to-system']");
   By composition_button=By.xpath("//button[@id='composition-button']");
-  By drop_menu_item_exit=By.xpath("//li[@data-testid='drop-menu-item-exit']");
+  By drop_menu_item_exit=By.xpath("//li[@data-testid='drop-menu-']");//item-exit
 
   public EstimateMarket AddEstimateToBasket(){
     try {
