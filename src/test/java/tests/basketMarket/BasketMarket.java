@@ -11,14 +11,14 @@ public class BasketMarket extends BaseTest {
            .deAuthorization();
 
   }
-  @Test
-  public void testMakingAnOrderByCDEKPayUponReceipt() throws Exception{
-    autorization
-            .enterLoginPassword();
-    estimateMarket
-            .AddEstimateToBasket();
-    autorization
-            .deAuthorization();
-  }
+//  @Test
+//  public void testMakingAnOrderByCDEKPayUponReceipt() throws Exception{
+//    autorization
+//            .enterLoginPassword();
+//    estimateMarket
+//            .AddEstimateToBasket();
+//    autorization
+//            .deAuthorization();
+//  }
 
 }

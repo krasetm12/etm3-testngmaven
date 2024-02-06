@@ -27,6 +27,10 @@ public class Autorization extends BasePage {
     By go_to_system=By.xpath("//button[@data-testid='go-to-system']");
     By composition_button=By.xpath("//button[@id='composition-button']");
     By drop_menu_item_exit=By.xpath("//li[@data-testid='drop-menu-item-exit']");
+    By next_time=By.xpath("//button[contains(.,'В следующий раз')]");
+
+
+
 
     public Autorization enterLoginPassword() throws Exception {
       open(ITEST_HOME_PAGE);
@@ -36,7 +40,8 @@ public class Autorization extends BasePage {
         //System.out.println("все понятно" );
         driver.findElement(understand_button).click();
         this.takeSceenshot();
-      } else if (driver.findElements(okay_button).size() > 0) {
+      }
+      if (driver.findElements(okay_button).size() > 0) {
 
         //System.out.println("все верно" );
         this.takeSceenshot();
@@ -52,6 +57,9 @@ public class Autorization extends BasePage {
       driver.findElement(password).clear();
       driver.findElement(password).sendKeys(PASSWORD_MARKET);
       driver.findElement(go_to_system).click();
+      waitForElementPresent(next_time, "в следующий раз", 10);
+      this.takeSceenshot();
+      driver.findElement(By.xpath("//button[contains(.,'В следующий раз')]")).click();
       return this;
     }
   public Autorization deAuthorization() throws Exception {
