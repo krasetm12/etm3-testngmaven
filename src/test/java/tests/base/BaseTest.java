@@ -19,7 +19,7 @@ import static common.Config.CLEAR_COOKIES_AND_STORAGE;
 import static common.Config.HOLD_BROWSER_OPEN;
 import static constants.Constant.Urls.SELENIUM_URL;
 
-@Listeners(TestListener.class )
+//@Listeners(TestListener.class )
 public class BaseTest  {
   protected RemoteWebDriver driver;
 
