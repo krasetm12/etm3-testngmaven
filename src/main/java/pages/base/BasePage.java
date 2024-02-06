@@ -18,6 +18,7 @@ import static constants.Constant.TimeOutVariables.EXPLICIT_WAIT;
 public class BasePage {
   protected RemoteWebDriver driver;
   public BasePage(RemoteWebDriver driver){
+
     this.driver=driver;
   }
   public void open(String url){
@@ -94,5 +95,8 @@ public class BasePage {
     FileUtils.copyFile(source, new File("./screenshot.png"));
     System.out.println("The Screenshot is taken...");
 
+  }
+  public byte[] takeScreenshot() {
+    return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
   }
 }

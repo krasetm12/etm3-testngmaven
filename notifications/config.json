@@ -1,0 +1,17 @@
+{
+  "base": {
+    "logo": "",
+    "project": "etm-iPRO3",
+    "environment": "",
+    "comment": "",
+    "reportLink": "http://autotest.etm.corp:8080/",
+    "language": "en",
+    "allureFolder": "allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "6335519735:AAFmptR6zDe25pto0miC-Z_l0_1rIJqx7S4",
+    "chat": "-855120157",
+    "replyTo": ""
+  }
+}

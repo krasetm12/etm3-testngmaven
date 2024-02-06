@@ -4,12 +4,12 @@ import common.CommonActions;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.ITestContext;
+import org.testng.annotations.*;
 import pages.autorization.Autorization;
 import pages.base.BasePage;
 import pages.estimate.EstimateMarket;
+import tests.TestListener;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -19,6 +19,7 @@ import static common.Config.CLEAR_COOKIES_AND_STORAGE;
 import static common.Config.HOLD_BROWSER_OPEN;
 import static constants.Constant.Urls.SELENIUM_URL;
 
+@Listeners(TestListener.class )
 public class BaseTest  {
   protected RemoteWebDriver driver;
 
@@ -34,9 +35,7 @@ public class BaseTest  {
   protected Autorization autorization = new Autorization(driver);
   protected EstimateMarket estimateMarket = new EstimateMarket(driver);
 
-
-
-  @AfterTest
+ @AfterTest
   public void clearCookiesAndLocalStorage(){
     if (CLEAR_COOKIES_AND_STORAGE){
       JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;

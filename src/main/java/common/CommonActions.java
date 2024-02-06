@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
+import org.testng.ITestContext;
+import org.testng.annotations.Listeners;
 
 
 import java.net.MalformedURLException;
@@ -21,6 +23,7 @@ import static constants.Constant.Urls.SELENIUM_URL;
 
 public class CommonActions  {
   public static RemoteWebDriver createDriver() throws MalformedURLException {
+
     RemoteWebDriver driver = null;
     switch (BROWSER_AND_PLATFORM){
       case "CHROME":
@@ -62,6 +65,7 @@ public class CommonActions  {
       default:
         Assert.fail("INCORRECT BROWSER NAME: " + BROWSER_AND_PLATFORM);
     }
+
     driver.manage().window().maximize();
     driver.manage().deleteAllCookies();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT));
