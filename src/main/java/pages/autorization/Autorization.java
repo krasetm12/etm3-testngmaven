@@ -30,7 +30,7 @@ public class Autorization extends BasePage {
 
     public Autorization enterLoginPassword() throws Exception {
       open(ITEST_HOME_PAGE);
-      System.out.println("начало первого теста");
+      System.out.println("начало теста");
       if (driver.findElements(understand_button).size() > 0) {
         waitForElementPresent(understand_button, "все понятно не появилось", 10);
         //System.out.println("все понятно" );
