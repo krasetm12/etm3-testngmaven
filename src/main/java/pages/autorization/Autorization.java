@@ -57,9 +57,12 @@ public class Autorization extends BasePage {
       driver.findElement(password).clear();
       driver.findElement(password).sendKeys(PASSWORD_MARKET);
       driver.findElement(go_to_system).click();
-      waitForElementPresent(next_time, "в следующий раз", 10);
-      this.takeSceenshot();
-      driver.findElement(By.xpath("//button[contains(.,'В следующий раз')]")).click();
+      if (driver.findElements(next_time).size() > 0) {
+        waitForElementPresent(next_time, "в следующий раз", 10);
+        driver.findElement(next_time).click();
+
+      }
+
       return this;
     }
   public Autorization deAuthorization() throws Exception {
