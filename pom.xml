@@ -41,7 +41,7 @@
 
                         <property>
                             <name>allure.results.directory</name>
-                            <value>/allure-results</value>
+                            <value>${project.build.directory}/allure-results</value>
                         </property>
                     </systemProperties>
                 </configuration>
